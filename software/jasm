@@ -1,0 +1,534 @@
+#!/bin/bash 
+
+# jasm
+#
+# Compiles an ASM file to Executable file 
+#
+# @author	Sergio Pohlmann <sergio@ycube.net>
+# @date		May, 03 of 2016
+#
+####################################################
+
+baseDir="/opt";
+
+. ${baseDir}/jaguaOs/config/config.sh
+. ${baseDir}/jaguaOs/config/ASMfunctions.sh
+. ${baseDir}/jaguaOs/config/Basefunctions.sh
+
+
+function useForm
+{
+	echo "		  Use form:"
+	echo ""
+	echo "		  jasm <file.asm>"
+	echo ""
+}
+
+
+# Prepare the code contents to a body program or to a routine
+function prepareCode
+{
+	code=${1};
+	if [ "${routine} " == " " ]; then
+		codeString=${code};
+	else
+		echo -n ${code} >> $routine.sub;
+	fi
+}
+
+function testCommand
+{
+
+	row=${*};
+	command=${1};
+	par1=${2};
+	par2=${3};
+	par3=${4};
+
+	validCommand=1;
+	if [ "${command:0:1}" == ";" ] ; then
+		validCommand=0;
+	fi
+	if [ "${command} " == " " ] ; then
+		validCommand=0;
+	fi
+
+	if [ "${validCommand}" == "1" ]; then
+
+		#echo ${row};
+		echo -n ".";
+
+		case ${command} in 
+
+			"org")
+				stackLengh=${par1};
+				;;
+
+			"define")
+				varName=${par1};
+				varContent=`echo ${row} | cut -d'"' -f 2`;
+				varContent="${varContent}$";
+				vars="${vars}${varContent}";
+				varDir=$(( ${varDir} + 1 ));
+				codeVar="_~"`printf '%02X' ${varDir}`;
+				echo "${varName} ${codeVar} ${#varContent}" >> ${varTempFile}
+				;;
+
+			"sub")
+				routine=${par1};
+				echo -n "" > ${routine}.sub;
+				routDir=$(( ${routDir} + 1 ));
+				codeVar="=~"`printf '%02X' ${routDir}`;
+				echo -n "${routine} ${codeVar} " >> ${routTempFile}
+				;;
+
+			":")
+				label=${par1};
+
+				# Define Code of function 
+				defineASMParameters "nop" ${direction} "";
+				
+				decStackLengh=`echo $((16#${stackLengh}))`;
+				labelPosition=$(( ${decStackLengh} + ${#codeString} ));
+
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}"
+
+
+				echo "${label} ${labelPosition}" >> ${labelTempFile};
+				;;
+
+
+			"ret")
+
+				# Define Code of function and parameters
+				defineASMParameters "popr";
+
+				# Increase the string with code				
+				prepareCode "${codeString}${codeFunction}"
+				
+				codeRoutine=`cat ${routine}.sub`;
+				echo ${#codeRoutine} >> ${routTempFile};
+				routine="";
+				;;
+
+			"jle")
+                # Gabriela Zayas
+                # Find Routine Address
+                direction=`cat ${labelTempFile}| grep "${par1}"| cut -d" " -f2`;
+                direction=`printf '%04X' ${direction}`;
+
+                zeroFlag=$( readFlag "ZF" );
+                signFlag=$( readFlag "SF");
+               
+                if [ "$zeroFlag" == "1" ]; then
+                    # Define Code of function
+                    defineASMParameters "jle" direction;
+
+                    # Increase the string with code
+                    prepareCode "${codeString}${codeFunction}${direction}"
+
+                elif [ "$signFlag" == "1" ]; then
+                    # Define Code of function
+                    defineASMParameters "jle" direction;
+
+                    # Increase the string with code
+                    prepareCode "${codeString}${codeFunction}${direction}"
+                fi
+
+
+                ;;
+
+			"jge")
+                # Javier Rios Selent
+                # Find Routine Address
+                direction=`cat ${labelTempFile}| grep "${par1}"| cut -d" " -f2`;
+                direction=`printf '%04X' ${direction}`;
+
+                zeroFlag=$( readFlag "ZF" );
+                signFlag=$( readFlag "SF");
+               
+                if [ "$zeroFlag" == "1" ] || [ "$signFlag" == "0" ]; then
+                    # Define Code of function
+                    defineASMParameters "jge" direction;
+
+                    # Increase the string with code
+                    prepareCode "${codeString}${codeFunction}${direction}"
+                fi
+                ;;
+
+			"mov")
+				if [ "${par2}" == "offset" ] ; then
+
+					# Find Offset
+					par2=`cat ${varTempFile}| grep "${par3}"| cut -d" " -f2`;
+				fi
+
+				# Define Code of function and parameters
+				defineASMParameters "mov" ${par1} ${par2};
+				defineCodePar1;
+				defineCodePar2;
+
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}${codePar1}${codePar2}"
+				;;
+
+			"int")
+
+				# Define Code of function and parameters
+				defineASMParameters "int";
+				defineCodePar1;
+				defineCodePar2;
+
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}"
+				;;
+
+			"cmp")
+
+				# Define Code of function and parameters
+				defineASMParameters "cmp" ${par1} ${par2};
+				defineCodePar1;
+				defineCodePar2;
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}${codePar1}${codePar2}"
+				;;
+
+
+
+			"je")
+
+				# Find Routine Address
+				direction=`cat ${labelTempFile}| grep "${par1}"| cut -d" " -f2`;
+				direction=`printf '%04X' ${direction}`;
+
+				zeroFlag=$( readFlag "ZF" );
+				
+				if [ "$zeroFlag" == "1" ] ; then
+
+					# Define Code of function 
+					defineASMParameters "jmp" direction;
+
+					# Increase the string with code
+					prepareCode "${codeString}${codeFunction}${direction}"
+				fi 
+
+
+				;;	
+
+				# salta para una posición si la última operación aritmética 
+				# resultó diferente de cero
+				# @author Yenny Vega Grahl
+			"jg")
+				# Find Routine Address
+				direction=`cat ${labelTempFile}| grep "${par1}"| cut -d" " -f2`;
+				direction=`printf '%04X' ${direction}`;
+
+				signalFlag=$( readFlag "SF" );
+				
+				if [["$signalFlag" == "0"]] ; then
+
+					if [["$signalFlag" == "0"]] ; then
+
+						# Define Code of function 
+						defineASMParameters "jmp" direction;
+
+						# Increase the string with code
+						prepareCode "${codeString}${codeFunction}${direction}"
+					fi
+				fi 
+
+				;;	
+
+			"jl")
+				#Rutina implementada por Leslie López
+				# Find Routine Address
+				direction=`cat ${labelTempFile}| grep "${par1}"| cut -d" " -f2`;
+				direction=`printf '%04X' ${direction}`;
+
+				signFlag=$( readFlag "SF" );
+				zeroFlag=$( readFlag "ZF" );
+				
+				if [ "$zeroFlag" == "0" ] ; then
+					if [ "$signFlag" == "1" ] ; then
+
+					# Define Code of function 
+					defineASMParameters "jl" direction;
+
+					# Increase the string with code
+					prepareCode "${codeString}${codeFunction}${direction}"
+
+					fi 
+				fi 
+
+
+
+				;;				
+
+
+			"jz")
+
+				# Find Routine Address
+				direction=`cat ${labelTempFile}| grep "${par1}"| cut -d" " -f2`;				
+				direction=`printf '%04X' ${direction}`;
+
+				zeroFlag=$( readFlag "ZF" );
+				
+				if [ "$zeroFlag" == "1" ] ; then
+
+					# Define Code of function 
+					defineASMParameters "jmp" direction;
+
+					# Increase the string with code
+					prepareCode "${codeString}${codeFunction}${direction}"
+				fi 
+
+				;;	
+
+			"end")
+
+				# Define Code of function and parameters
+				defineASMParameters "end";
+				defineCodePar1;
+				defineCodePar2;
+
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}"
+				;;
+
+			"push")
+
+				# Define Code of function and parameters
+				defineASMParameters "push" ${par1};
+				defineCodePar1;
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}${codePar1}"
+				;;
+
+
+			"pop")
+				# Define Code of function and parameters
+				defineASMParameters "pop" ${par1};
+				defineCodePar1;
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}${codePar1}"
+				;;
+
+
+			"pushr")
+
+				# Define Code of function and parameters
+				defineASMParameters "pushr";
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}"
+				;;
+
+
+			"popr")
+
+				# Define Code of function and parameters
+				defineASMParameters "popr";
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}"
+				;;
+
+
+			"stpc")
+
+				# Define Code of function and parameters
+				defineASMParameters "stpc";
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}${direction}"
+				;;
+
+
+			"jump" | "jmp")
+
+				# Find label Address
+				direction=`cat ${labelTempFile}| grep "${par1}"| cut -d" " -f2`;
+				direction=`printf '%04X' ${direction}`;
+
+				# Define Code of function 
+				defineASMParameters "jmp" direction;
+
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}${direction}"
+				;;
+
+				
+			"jnz")
+
+				# Find Routine Address
+				direction=`cat ${labelTempFile}| grep "${par1}"| cut -d" " -f2`;
+				
+				direction=`printf '%04X' ${direction}`;
+
+				zeroFlag=$( readFlag "ZF" );
+				
+				if [ "$zeroFlag" == "0" ] ; then
+
+					# Define Code of function 
+					defineASMParameters "jmp" direction;
+
+					# Increase the string with code
+					prepareCode "${codeString}${codeFunction}${direction}"
+				fi 
+
+
+				;;	
+
+
+			"call")
+
+				# Find Routine Address
+				direction=`cat ${routTempFile}| grep "${par1}"| cut -d" " -f2`;
+				
+				# Define Code of function 
+				defineASMParameters "call" direction;
+
+				# Increase the string with code
+				prepareCode "${codeString}${codeFunction}${direction}"
+				;;
+
+
+			*)
+				echo "Invalid instruction [${command}] in line [${row}]";
+				echo;
+				end 1;
+				;;
+		esac	
+
+	fi
+
+
+}
+
+
+function end
+{
+	rm ${varTempFile} > /dev/null;
+	#rm *.sub > /dev/null
+	#rm ${labelTempFile} > /dev/null;
+	#rm 
+	exit ${1};
+}
+
+
+
+
+header "jasm - jaguaOs Compiler";
+if [ "${1} " == " " ] ; then
+	useForm;
+	exit 0;
+fi
+
+# Define the files of system
+
+# Original File
+file=${1};
+
+# Executable File
+executable=${diskDir}/`basename ${file} .asm`".exe";
+
+# Variables temp file
+varDir=0;
+varTempFile="variables.tmp";
+echo -n "" > ${varTempFile};
+
+#Routines Temp File
+routDir=0;
+routTempFile="routines.tmp";
+echo -n "" > ${routTempFile};
+
+
+#Labels Temp File
+labelTempFile="labels.tmp";
+echo -n "" > ${labelTempFile};
+
+
+# Other variables
+codeString="";
+routine="";
+
+
+
+if [ ! -f ${file} ] ; then
+	echo "Inexistent file ${file}"; echo
+	exit 1;
+fi
+
+
+while read -r line
+do
+	testCommand ${line};
+done < ${file};
+
+
+echo
+echo 
+echo "File compiled to ${executable}"
+echo 
+echo "Compiler information:"
+
+
+
+# Force a end instruction at the end of the base code
+codeString="${codeString}A8";
+
+# Define the lengh of the code, and the start of variables address
+codeLengh=${#codeString};
+decStackLengh=`echo $((16#${stackLengh}))`;
+decVarAddr=$(( ${decStackLengh} + ${codeLengh} ));
+varAddr=`printf '%04X' ${decVarAddr}`;
+tempVarAddress=${decVarAddr};
+
+
+echo "Original Code:             $codeString"
+
+routVarAddress=${decVarAddr};
+while read line
+do
+	oldPosition=`echo $line | cut -d" " -f2`;
+	lengh=`echo $line | cut -d" " -f3`;
+	name=`echo $line | cut -d" " -f1`;
+
+#echo $routVarAddress;
+#echo "***** $name $oldPosition $lengh";
+
+	codeString=${codeString//${oldPosition}/`printf '%04X' ${routVarAddress}`};
+	routVarAddress=$(( ${routVarAddress} + ${lengh}));
+
+	codeString="${codeString}`cat ${name}.sub`";
+
+done < ${routTempFile}
+
+tempVarAddress=${routVarAddress};
+
+
+
+
+
+
+
+
+while read line
+do
+	oldPosition=`echo $line | cut -d" " -f2`;
+	lengh=`echo $line | cut -d" " -f3`;
+	codeString=${codeString//${oldPosition}/`printf '%04X' ${tempVarAddress}`};
+	tempVarAddress=$(( ${tempVarAddress} + ${lengh}));
+
+done < ${varTempFile}
+
+
+echo "New Code:                  $codeString"
+
+echo "stack=${stackLengh}" 		>  ${executable};
+echo "vars='${vars}'"			>> ${executable};
+echo "varAddr=${varAddr}"		>> ${executable};
+echo "code=\"${codeString}\""	>> ${executable};
+
+
+end 0;
+
+

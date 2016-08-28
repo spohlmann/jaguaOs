@@ -1,0 +1,380 @@
+commit ae6bf3d99e1df9c16b06ab96b9f8f36a4e7246a1
+Merge: 20d91e0 bd4b503
+Author: louvelaz <louvebe11@gmail.com>
+Date:   Mon Jun 13 22:01:33 2016 -0400
+
+    Merge branch 'master' of https://github.com/ahalaburda/jaguaos
+
+commit 20d91e0f6baa71c028843791bffa6f13ee5f88a5
+Author: louvelaz <louvebe11@gmail.com>
+Date:   Mon Jun 13 22:01:17 2016 -0400
+
+    added jz instruction
+
+commit bd4b503225ba90dbfc758f41585257782842eed8
+Merge: 22042bb 3931083
+Author: yennygrahl <yennygrahl@gmail.com>
+Date:   Mon Jun 13 21:53:03 2016 -0400
+
+    Merge branch 'master' of https://github.com/ahalaburda/jaguaos
+
+commit 22042bb71936bdf29b6a8c4f347fd10fbd0ffcf4
+Author: yennygrahl <yennygrahl@gmail.com>
+Date:   Mon Jun 13 21:50:54 2016 -0400
+
+    edited 'jg'
+
+commit 3931083207e90337def5a1acffa3cdd4a8241d52
+Merge: a430ffa a8e97c5
+Author: Lesfig <leslyee.05@gmail.com>
+Date:   Mon Jun 13 21:47:47 2016 -0400
+
+    Merge branch 'master' of https://github.com/ahalaburda/jaguaos
+
+commit a430ffae37108b9e240e16e9ee47753285da096f
+Merge: 25ba817 80f459f
+Author: Lesfig <leslyee.05@gmail.com>
+Date:   Mon Jun 13 21:47:13 2016 -0400
+
+    cambio menor en jl
+
+commit a8e97c585a87d3f57bce504e7652901bbcc6bbad
+Author: yennygrahl <yennygrahl@gmail.com>
+Date:   Mon Jun 13 21:44:53 2016 -0400
+
+    added 'jg' function
+
+commit 25ba81766cc2a0947b237d1f2fef9b6ccd04b21a
+Author: Lesfig <leslyee.05@gmail.com>
+Date:   Mon Jun 13 21:41:49 2016 -0400
+
+    cambio menor en jl
+
+commit 80f459f9f78d7307103f6f71f4ed8c58154560c0
+Author: yennygrahl <yennygrahl@gmail.com>
+Date:   Mon Jun 13 21:02:18 2016 -0400
+
+    added 'jg' definition
+
+commit 029e8da8e04bfd13303d3797ea0ca4a1b8615e30
+Author: Lesfig <leslyee.05@gmail.com>
+Date:   Mon Jun 13 20:28:37 2016 -0400
+
+    Mejoras en jl
+
+commit 906a4789cdbe50d42b1d50d967bbea1c7361ece1
+Merge: 7312e72 a0e250a
+Author: 6aazayas <gabrielazayas926@gmail.com>
+Date:   Mon Jun 13 20:03:50 2016 -0400
+
+    Merge branch 'master' of https://github.com/ahalaburda/jaguaos
+
+commit 7312e7256e8ed1d8a23f54bff279879afeb2cf5e
+Author: 6aazayas <gabrielazayas926@gmail.com>
+Date:   Mon Jun 13 20:02:43 2016 -0400
+
+    Fixed JLE instruction
+
+commit a0e250a0f1f9d196c498b72e0cbadd96cbc8d8cc
+Author: root <rsjavier14@gmail.com>
+Date:   Mon Jun 13 19:53:29 2016 -0400
+
+    Fixed JGE instruction
+
+commit 1d96a53b9bdfd00d3bb1245bc38e731fd13b8a01
+Merge: a438f1a 1808b50
+Author: root <rsjavier14@gmail.com>
+Date:   Mon Jun 13 19:38:33 2016 -0400
+
+    Merge branch 'master' of https://github.com/ahalaburda/jaguaos
+
+commit a438f1a641179023e645f1764c78812502c127d1
+Author: root <rsjavier14@gmail.com>
+Date:   Mon Jun 13 19:36:59 2016 -0400
+
+    Add JLE instruction ( GABRIELA ZAYAS )
+
+commit 6466eec1120dda85574b02cd396ac8d3b84ba944
+Author: root <rsjavier14@gmail.com>
+Date:   Mon Jun 13 18:54:55 2016 -0400
+
+    Add JGE instruction
+
+commit f6ddb4c9cdd46c4a9c34783179590a70aa755cb6
+Merge: 4d1da35 2c0e739
+Author: Leslie <leslyee.05@gmail.com>
+Date:   Mon Jun 13 18:06:32 2016 -0400
+
+    added jl instruction
+
+commit 4d1da35ea3a6bc249c20b77c20a89c2fcda899f0
+Author: Leslie <leslyee.05@gmail.com>
+Date:   Mon Jun 13 17:51:45 2016 -0400
+
+    added jl instruction
+
+commit 2c0e739dfcadd1ca5face345f4785792b1d7e7d2
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Fri Jun 10 22:22:18 2016 -0400
+
+    Fix the call error
+
+commit 1808b50cbeb48a19441a3cc8989b5d7f244a6500
+Author: natalia <acunanaty17@gmail.com>
+Date:   Fri Jun 10 01:10:37 2016 +0200
+
+    agregue la funcion jnz
+
+commit ea2d391ffad9099b3903e97a0d5a800a0e76d412
+Author: mlored <loredelpuerto@gmail.com>
+Date:   Thu Jun 9 17:52:12 2016 -0400
+
+    jump definition implemented
+
+commit d6e8bd9e16d4dcb3ed69ce2bbe68e35d7495d9e9
+Author: Emilio Centurion <emicenturion13@gmail.com>
+Date:   Thu Jun 9 02:05:46 2016 -0400
+
+    added 'stpc' instruction
+
+commit cdb413c99465f805dcf703619797e21091bc31b2
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed Jun 8 18:09:17 2016 -0400
+
+    Added 'popr'instruction
+
+commit e8863eb23ac545da3cb4df5baa00f85bbd2f9b62
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed Jun 8 17:24:49 2016 -0400
+
+    Added the 'pushr' instruction
+
+commit 0bc2ecf206d4390ff6b514396f69bff68eb27daa
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed Jun 8 16:55:20 2016 -0400
+
+    Added the function '0' to interrupts
+
+commit 194ff6fca2460235917788f5e43cf5c5491ca358
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed Jun 8 15:49:40 2016 -0400
+
+    Added 'pop' instruction; check stack underflow and stack overflow
+
+commit 76923d6c7878a405c7c03eb5bca55c38bd551533
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed Jun 8 14:56:07 2016 -0400
+
+    Created the Stack Functions; Created the push instruction
+
+commit 31370fa54d26c50d5dc19598d5dfa9f7fec85709
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Fri Jun 3 08:45:19 2016 -0400
+
+    Created a Stack Pointer (SP) in the processor dir
+
+commit 28bece2cd5636b9717bacc6751b10372a741923e
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu Jun 2 18:21:29 2016 -0400
+
+    added a 'je' function
+
+commit 4d099eb638b1c3e6fe18cf1d4cb49e99f2e090a1
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu Jun 2 17:59:00 2016 -0400
+
+    added 'cmp' function
+
+commit 73a30d34c33f5bbea236f4e7da1b99714686c27e
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu Jun 2 17:38:52 2016 -0400
+
+    added a definitions of the system in /doc dir
+
+commit 50137034a476d08aa8b93022f99b524a3aa6ff61
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu Jun 2 16:40:40 2016 -0400
+
+    fix jump function
+
+commit 99a420878b02279c596017e22ee0e180205e9411
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu Jun 2 16:07:55 2016 -0400
+
+    Added a 'nop' function
+
+commit 62e3e2803333524b4e2f59d258cef59696988f30
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu Jun 2 15:29:05 2016 -0400
+
+    Mode 'step' now shows the last changed register
+
+commit 9743b12e8c409b8eecade3fc84e0806bec85de06
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu Jun 2 14:04:20 2016 -0400
+
+    created the 'step' option to execute program in shell
+
+commit e62d6a11b921fde6b3ae89be54b594f93f536e67
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed Jun 1 18:21:30 2016 -0400
+
+    'jump', ':', 'ret' implemented and running
+
+commit 07a6c46777c2c65ae560044a1f1c15de7cacc122
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed Jun 1 15:44:46 2016 -0400
+
+    Added a jmp function
+
+commit eda40fd566c0eede502d092bf9d1f07dd0f4df28
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed Jun 1 15:06:23 2016 -0400
+
+    Fix the speed of the Clear Screen interrupt
+
+commit 7b886f0910ab390bb333dda64f6ad4c865d96745
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed Jun 1 14:36:53 2016 -0400
+
+    fix accumulator error (write value in hexadecimal); Add the 'inc' instruction
+
+commit 8d572a5ae82af9ca7abdbed3feab6be63bdfec7d
+Merge: 5dea76e c634add
+Author: Adrián Halaburda <adh761@gmail.com>
+Date:   Mon May 30 18:27:21 2016 -0400
+
+    Merge pull request #6 from willymarpuk/master
+    
+    Se mejoro la implementacion de la funcion add, ya se actualizan los f…
+
+commit c634addbf05b29a90996ddefd49aab9f769790eb
+Author: William Martínez <william@william-VirtualBox.(none)>
+Date:   Thu May 26 21:12:13 2016 -0400
+
+    Se soluciono el error que se lanzaba al actualizar los flags.
+
+commit ce59894ea671bc7cc53d6f4967bf6cc7f6b19150
+Author: William Martínez <william@william-VirtualBox.(none)>
+Date:   Thu May 26 20:52:59 2016 -0400
+
+    Se mejoro la implementacion de la funcion add, ya se actualizan los flags y ya realiza las operaciones en hexadecimal.
+
+commit 5dea76ed9a14dd53c713ddb98c94cff63ece79ee
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu May 26 18:26:47 2016 -0400
+
+    fix tabs and newlines in the printSreen function
+
+commit ea32aed909ef58deff6bd867c3f74376c9de3d46
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu May 26 17:52:06 2016 -0400
+
+    Fix A7 error; Creates a debug option to exec in Shell
+
+commit ac53ce71121dc59dc0861205717584c98f8a7f74
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu May 26 17:17:00 2016 -0400
+
+    Created end instruction
+
+commit 2ff4c72ebb212a3c69d04ac31cb84d7493a5cb12
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu May 26 15:25:09 2016 -0400
+
+    Added monitor.sh; solved compiller problem qith lenght of variables
+
+commit 92f4d358934b5421c4f6e33fe19e89b889ab93a4
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Thu May 26 11:32:02 2016 -0400
+
+    changes in config.sh
+
+commit 2c839a0a26d100802df54bc78b4ee44ba2c9f747
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed May 25 18:19:37 2016 -0400
+
+    Updated the exec command; created the runProcessor
+
+commit dc09701d94df6d9167406b1173f45363def9d706
+Merge: 00a8083 2b2dd17
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed May 25 16:40:47 2016 -0400
+
+    Merge branch 'master' of https://github.com/ahalaburda/jaguaos
+
+commit 00a80835b1cc92da8f10bd607e1620fd6d7da0be
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed May 25 16:28:30 2016 -0400
+
+    shell.sh updated
+
+commit 2b2dd17ae3869a3d5e41fd263fa59d6e5d6270b0
+Merge: 17aca34 3aeca1a
+Author: Adrián Halaburda <adh761@gmail.com>
+Date:   Wed May 25 16:13:59 2016 -0400
+
+    Merge pull request #5 from willymarpuk/master
+    
+    Se agrego la funcion add, para el mismo se agrego el archivo A4.sh, l…
+
+commit 3aeca1af2fbc903f51a35d7c35c95f1583707259
+Merge: 28fdf7e 17aca34
+Author: William Martínez <william@william-VirtualBox.(none)>
+Date:   Wed May 25 15:02:39 2016 -0400
+
+    Merge branch 'master' of http://github.com/ahalaburda/jaguaos
+
+commit 17aca34dc6fc8e8850a20471cb8faca1a4559700
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed May 25 15:01:47 2016 -0400
+
+    Added writeACC function
+
+commit cc0e21e5abfc079f4ea96216aff340238ba35ce7
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Wed May 25 14:49:08 2016 -0400
+
+    Added writeFlag Function
+
+commit 28fdf7ea0972a8e2cb3b2835a8bc11daaeb53b79
+Author: William Martínez <william@william-VirtualBox.(none)>
+Date:   Wed May 25 11:47:57 2016 -0400
+
+    Se agrego la funcion add, para el mismo se agrego el archivo A4.sh, la suma se realiza con numeros decimales previamente cargados en los registros a utilizar.
+
+commit 6e33a5930a37282138ba061298c56307124f2419
+Author: root <emicenturion13@gmail.com>
+Date:   Tue May 24 04:56:03 2016 -0400
+
+    implementacion de la instruccion dec, para eso cree el archivo A6.sh. Tambien modifique una linea del archivo ASMTable.sh
+
+commit 0440ac36da70df4cd1a69e64a297cf2808a29e75
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Fri May 20 23:49:59 2016 -0400
+
+    Fixed jasm
+
+commit ebe01d6602662b551e29736e2cb1607fca9f7628
+Author: Sergio Antonio Pohlmann <sergio.pohlmann@gmail.com>
+Date:   Fri May 20 17:59:26 2016 -0400
+
+    new files addded
+
+commit aaec133e7553c1a78d98235583f0215c89f64715
+Author: Adrián Halaburda <adh761@gmail.com>
+Date:   Thu May 12 22:00:33 2016 -0400
+
+    Update README.md
+
+commit b923e7fa53fdf7d28bf90d72a6d5d69568cb3a0e
+Author: Adrian <adh761@gmail.com>
+Date:   Thu May 12 21:50:56 2016 -0400
+
+     Se agregaron los archivos del directorio opt del servidor
+
+commit 582aba97c182278abe827481cf71294c1e74c749
+Author: Adrián Halaburda <adh761@gmail.com>
+Date:   Thu May 12 21:41:45 2016 -0400
+
+    Initial commit

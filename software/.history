@@ -1,0 +1,386 @@
+
+history
+exit
+dir
+history
+exit
+dir
+exit
+cat test.exe
+exit
+exec test
+exit
+exec test
+exit
+cat test
+cat test.exe
+exit
+exec test
+exec test
+exec test
+exec test.exe
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+cat test.exe
+exec test
+cat test.exe
+exec test
+cat test.exe
+exec test
+exec test
+
+exec test
+cat test.exe
+dir
+exec test
+exec test
+exec test
+exec test
+cat test.exe
+exec test
+execv test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exit
+exec test
+exec test
+exec test
+exec test
+exec test
+exit
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+[A
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+cat test.exe
+exec test
+exec test
+exec test debug
+exec test debug
+exec test debug
+exec test debug
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+cat test.exe
+cat test.exe
+exec test
+exec test
+exec test
+exec test debug
+exec test
+exec test
+cat test.exe
+exec test
+exec test
+dir
+exec test debug
+exec test debug
+exec test
+exec test debug
+exit
+exec test debug
+exit
+exec test debug
+exec test debug
+exec test debug
+exec test debug
+exit
+cat test.exe
+exec test
+exec test
+exit
+exec test
+exit
+exec test step
+exit
+exec test step
+exec test step
+exec test step
+exec test step
+exec test step
+exec test step
+exec test step
+exec test step
+exec test step
+exec test step
+exec test
+exec test step
+exec test
+exec test step
+exec test step
+exec test
+exec test step
+exec test step
+exec test step
+exec test step
+exec test step
+exec test step
+exec test step
+exec test step
+exec test step
+exit
+exec test
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+exec test
+exec test step
+exec test
+exit
+jasm test.asm
+exec test
+jasm test.asm
+exec test
+jasm jump.asm
+jasm jmp.asm
+jasm jmp.asm
+jasm jmp.asm
+jasm jmp.asm
+jasm jmp.asm
+jasm jmp.asm
+jasm jmp.asm
+[A
+jasm jmp.asm
+jasm jmp.asm
+jasm jmp.asm
+exec jmp step
+jasm jmp.asm
+exec jmp
+exec jmp step
+jasm jmp.asm
+exec jmp
+jasm jmp.asm
+exec jmp
+exit
+jasm jmp.asm
+exec jmp.asm
+exec jmp
+exec jmp step
+exec jmp
+exec jmp
+jasm jmp.asm
+jasm jmp.asm
+jasm jmp.asm
+exec jmp
+jasm jmp.asm
+exec jmp step
+exec jmp
+exec jmp
+jasm jmp.asm
+jasm jmp.asm
+exec jmp
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+jasm test.asm
+exec test
+exec test
+jasm jmp.asm
+exec jmp
+exec jmp
+jasm jmp.asm
+jasm test.asm
+jasm jmp.asm
+dir
+jasm test.asm
+exec test
+jasm test.asm
+exec test
+exec test debug
+exec test step
+exit
+jasm test.asm
+exec test
+exec jmp
+jasm test.asm
+exec test step
+exec test
+jasm test.asm
+exec test
+exit
+jasm test.asm
+exit
+exec test
+exit
+jasm test.asm
+exec test step
+exec test
+exec test step
+jasm test.asm
+exec test step
+exec test
+dir
+cat test.exe
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test step
+jasm test.asm
+exec test
+exit
+jasm test.asm
+exec test
+jasm test.asm
+exec test
+exec test
+jasm test.asm
+exec test
+jasm test.asm
+exec test
+jasm test.asm
+exec test
+exit
+jasm test.asm
+jasm test.asm
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+jasm test.asm
+exec test
+exit
+jasm test.asm
+exec test
+jasm test.asm
+jasm test.asm
+exec test
+exit
+exec test
+exec test
+exec test
+jasm test.asm
+exec test step
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test
+exec test step
+jasm test/asm
+jasm test.asm
+jasm test.asm
+exec test
+jasm test.asm
+exec test
+exit
+jasm test.asm
+dir
+exec test
+exec test debug
+exec test step
+jasm test.asm
+jasm test.asm
+dir
+cat test.exe
+exit
+exec test
+jasm test.asm
+exec test
+exec test step
+jasm test.asm
+exec test
+jasm test.asm
+exec test
+exec test debug
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+jasm test.asm
+JASM TEST.ASM
+jasm test.asm
+exec test
+exec test step
+exec test step
+exec test
+exec test step
+jasm test.asm
+exec test
+exec test step
+exec test
+exec test step
+exec test
+exec test step
+exec test
+exec test
+exit
+exec test step
+exec test step
+jasm test.asm
+exec test
+jasm test.asm
+exec test
+exit
+
+exit
+dir
+jasm test.asm
+exec test step
+exec test
